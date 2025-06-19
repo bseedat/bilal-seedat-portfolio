@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media - Bilal Seedat</title>
+
+    <!-- SEO and social sharing -->
+    <meta name="description" content="Anime, movies, games, and books that inspire Bilal Seedat">
+    <meta name="author" content="Bilal Seedat">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="nav-minimal">
+    <div class="nav-container">
+        <a href="index.html" class="nav-home">bilal</a>
+        <div class="nav-links">
+            <a href="projects.html">Projects</a>
+            <a href="photos.html">Photos</a>
+            <a href="blog.html">Blog</a>
+            <a href="media.html" class="nav-active">Media</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Media Page Content -->
+<section class="page-content">
+    <div class="page-header">
+        <h1>Media</h1>
+        <p class="page-description">Anime, movies, games, and books that I've enjoyed over the years. Currently building my consumption list and sharing recommendations.</p>
+    </div>
+
+    <!-- Introduction Text -->
+    <div class="media-intro">
+        <p>I'm a nerd. I like shows. I like games. I like reading.</p>
+        <p>I wanted to list them out, for myself, for sharing, or just for the record.</p>
+    </div>
+
+    <!-- Media Type Filters -->
+    <div class="media-filters">
+        <a href="media.html" class="filter-link active" data-type="anime">Anime</a>
+        <a href="media.html?type=movie" class="filter-link" data-type="movie">Movies</a>
+        <a href="media.html?type=game" class="filter-link" data-type="game">Games</a>
+        <a href="media.html?type=book" class="filter-link" data-type="book">Books</a>
+    </div>
+
+    <!-- Media List -->
+    <div class="media-list">
+        <!-- Anime -->
+        <div class="media-item" data-type="anime">
+            <span class="media-title">Attack on Titan</span>
+            <span class="media-dots"></span>
+            <span class="media-creator">x</span>
+        </div>
+
+        <div class="media-item" data-type="anime">
+            <span class="media-title">Death Note</span>
+            <span class="media-dots"></span>
+            <span class="media-creator">x</span>
+        </div>
+
+        <div class="media-item" data-type="anime">
+            <span class="media-title">Demon Slayer</span>
+            <span class="media-dots"></span>
+            <span class="media-creator">x</span>
+        </div>
+
+        <div class="media-item" data-type="anime">
+            <span class="media-title">Jujutsu Kaisen</span>
+            <span class="media-dots"></span>
+            <span class="media-creator">x</span>
+        </div>
+
+        <!-- Movies -->
+        <div class="media-item" data-type="movie">
+            <span class="media-title">Inception</span>
+            <span class="media-dots"></span>
+            <span class="media-creator">Christopher Nolan</span>
+        </div>
+
+        <div class="media-item" data-type="movie">
+            <span class="media-title">Spirited Away</span>
+            <span class="media-dots"></span>
+            <span class="media-creator">Hayao Miyazaki</span>
+        </div>
+
+        <!-- Games -->
+        <div class="media-item" data-type="game">
+            <span class="media-title">The Witcher 3</span>
+            <span class="media-dots"></span>
+            <span class="media-creator">CD Projekt Red</span>
+        </div>
+        
+        <div class="media-item" data-type="game">
+            <span class="media-title">Cyberpunk 2077</span>
+            <span class="media-dots"></span>
+            <span class="media-creator">CD Projekt Red</span>
+        </div>
+
+        <!-- Books -->
+        <div class="media-item" data-type="book">
+            <span class="media-title">Red Rising</span>
+            <span class="media-dots"></span>
+            <span class="media-creator">Pierce Brown</span>
+        </div>
+        
+
+        <!-- Placeholder for more content -->
+        <div class="media-placeholder-text">
+            <p>some of the stuff I enjoyed...</p>
+            <p></p>
+        </div>
+    </div>
+
+    <!-- TODO: Add more media items -->
+    <!-- TODO: Add rating system -->
+</section>
+
+<script src="js/main.js"></script>
+
+<!-- Filter functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const type = urlParams.get('type') || 'anime';
+
+        // Update active filter
+        document.querySelectorAll('.filter-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.dataset.type === type) {
+                link.classList.add('active');
+            }
+        });
+
+        // Show only matching media items
+        document.querySelectorAll('.media-item').forEach(item => {
+            if (item.dataset.type === type) {
+                item.style.display = 'flex';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>
